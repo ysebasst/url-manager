@@ -1,0 +1,9 @@
+@use '@/styles' as *;
+
+.home {
+  padding: $spacing-4 $spacing-5;
+
+  &__title {
+    margin: $spacing-0;
+  }
+}

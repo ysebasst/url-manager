@@ -1,0 +1,37 @@
+@use './variables' as *;
+
+@mixin fromTablet() {
+  @media (min-width: $widthTablet) {
+    @content;
+  }
+}
+
+@mixin fromDesktop() {
+  @media (min-width: $widthDesktop) {
+    @content;
+  }
+}
+
+@mixin fromLargeDesktop() {
+  @media (min-width: $widthLargeDesktop) {
+    @content;
+  }
+}
+
+@mixin toTablet() {
+  @media (max-width: $widthToTablet) {
+    @content;
+  }
+}
+
+@mixin toDesktop() {
+  @media (max-width: $widthToDesktop) {
+    @content;
+  }
+}
+
+@mixin toLargeDesktop() {
+  @media (max-width: $widthToLargeDesktop) {
+    @content;
+  }
+}

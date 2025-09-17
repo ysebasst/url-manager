@@ -1,0 +1,20 @@
+@use '@/styles/variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.15;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: $font-family-default;
+  color: $color-grey-500;
+  background-color: $color-grey-25;
+}

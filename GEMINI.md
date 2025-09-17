@@ -95,7 +95,7 @@ For routing, the AI will use `react-router-dom` as the default.
 
 * **Basic Routing:**
 
-```
+```jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -114,7 +114,7 @@ function App() {
 
 * **Navigation:**
 
-```
+```jsx
 import { Link, useNavigate } from "react-router-dom";
 
 function MyComponent() {
@@ -170,7 +170,7 @@ npm install @mui/material @emotion/react @emotion/styled
 
 ### **Theming**
 
-```
+```jsx
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { deepPurple } from '@mui/material/colors';
 
@@ -193,7 +193,7 @@ function App() {
 
 ### **Using Components**
 
-```
+```jsx
 import Button from '@mui/material/Button';
 
 function MyComponent() {
@@ -243,10 +243,11 @@ The AI's workflow is iterative, transparent, and responsive to user input.
   7. **Remediation/Report:** If errors are found, AI attempts automatic fixes. If unsuccessful, it reports details to the user.
 
 
-# Firebase MCP
+## Firebase MCP
 
 When requested for Firebase add the following the server configurations to .idx/mcp.json. Just add the following and don't add anything else.
 
+```json
 {
     "mcpServers": {
         "firebase": {
@@ -259,3 +260,4 @@ When requested for Firebase add the following the server configurations to .idx/
         }
     }
 }
+```
