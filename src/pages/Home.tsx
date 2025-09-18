@@ -2,6 +2,7 @@ import { Button } from '../components/button/Button'
 import './Home.scss'
 import { IconSVGType } from '../components/icon-svg/IconSVG'
 import { SizeType } from '../models/size/size.models'
+import { useState } from 'react'
 
 interface ButtonProps {
   prefix: string
@@ -40,18 +41,49 @@ export const Home: React.FC = () => {
     {prefix: '20', text: 'Outline', type: 'outline', disabled: true},
     {prefix: '21', text: 'Clear', type: 'clear', disabled: true},
   ]
+  const sizeList: SizeType[] = ['tiny', 'small', 'medium', 'large', 'giant']
+  const [size, setSize] = useState<SizeType>('medium')
+
+  const handleChangeSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newSize = event.target.value as SizeType
+    setSize(newSize)
+  }
+
+  const buttonListFormatted = () => {
+    return buttonList.map((button) => ({
+      ...button,
+      size,
+    }))
+  }
 
   return (
     <div className='home'>
       <h1 className='home__title'>Home</h1>
-      <div className="buttons" style={{
+      <select
+        id='size'
+        name='size'
+        value={size}
+        style={{
+          padding: '0.25rem 1rem',
+          width: '100%',
+          borderRadius: '0.25rem',
+        }}
+        onChange={(event) => handleChangeSize(event)}
+      >
+        {
+          sizeList.map((size) => (
+            <option key={size} value={size}>{size}</option>
+          ))
+        }
+      </select>
+      <div className='buttons' style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '0.25rem',
         padding: '1rem 0',
       }}>
         {
-          buttonList.map((button) => (
+          buttonListFormatted().map((button) => (
             <Button
               key={button.prefix}
               prefix={button.prefix}
