@@ -3,6 +3,10 @@
 .home {
   padding: $spacing-3 $spacing-4;
 
+  &__wrapper {
+    @include wrapper;
+  }
+
   &__title {
     margin: $spacing-0;
   }

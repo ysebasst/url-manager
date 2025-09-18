@@ -58,47 +58,49 @@ export const Home: React.FC = () => {
 
   return (
     <div className='home'>
-      <h1 className='home__title'>Home</h1>
-      <select
-        id='size'
-        name='size'
-        value={size}
-        style={{
-          padding: '0.25rem 1rem',
-          width: '100%',
-          borderRadius: '0.25rem',
-        }}
-        onChange={(event) => handleChangeSize(event)}
-      >
-        {
-          sizeList.map((size) => (
-            <option key={size} value={size}>{size}</option>
-          ))
-        }
-      </select>
-      <div className='buttons' style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
-        gap: '0.25rem',
-        padding: '1rem 0',
-      }}>
-        {
-          buttonListFormatted().map((button) => (
-            <Button
-              key={button.prefix}
-              prefix={button.prefix}
-              type={button.type}
-              text={button.text}
-              iconLeft={button.iconLeft}
-              iconRight={button.iconRight}
-              iconOnly={button.iconOnly}
-              disabled={button.disabled}
-              loading={button.loading}
-              size={button.size}
-              onClick={button.onClick}
-            />
-          ))
-        }
+      <div className='home__wrapper'>
+        <h1 className='home__title'>Home</h1>
+        <select
+          id='size'
+          name='size'
+          value={size}
+          style={{
+            padding: '0.25rem 1rem',
+            width: '100%',
+            borderRadius: '0.25rem',
+          }}
+          onChange={(event) => handleChangeSize(event)}
+        >
+          {
+            sizeList.map((size) => (
+              <option key={size} value={size}>{size}</option>
+            ))
+          }
+        </select>
+        <div className='buttons' style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
+          gap: '0.25rem',
+          padding: '1rem 0',
+        }}>
+          {
+            buttonListFormatted().map((button) => (
+              <Button
+                key={button.prefix}
+                prefix={button.prefix}
+                type={button.type}
+                text={button.text}
+                iconLeft={button.iconLeft}
+                iconRight={button.iconRight}
+                iconOnly={button.iconOnly}
+                disabled={button.disabled}
+                loading={button.loading}
+                size={button.size}
+                onClick={button.onClick}
+              />
+            ))
+          }
+        </div>
       </div>
     </div>
   )
