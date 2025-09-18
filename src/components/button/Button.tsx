@@ -54,7 +54,6 @@ export const Button: React.FC<ButtonProps> = ({
 
   const buttonIconClassName = classNames(
     'button__icon',
-    `button__icon--${size}`,
   )
 
   const buttonIconLeftClassName = classNames(
