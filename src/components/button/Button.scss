@@ -76,7 +76,9 @@
     }
 
     &:focus {
-      outline: var(--outline-width) solid $color-primary-100;
+      @include fromTablet() {
+        outline: var(--outline-width) solid $color-primary-100;
+      }
     }
 
     &:active {
@@ -103,8 +105,10 @@
     }
 
     &:focus {
-      background-color: $color-white;
-      outline: var(--outline-width) solid $color-primary-100;
+      @include fromTablet() {
+        background-color: $color-white;
+        outline: var(--outline-width) solid $color-primary-100;
+      }
     }
 
     &:active {
@@ -131,9 +135,11 @@
     }
 
     &:focus {
-      background-color: $color-white;
-      border-color: $color-white;
-      outline: var(--outline-width) solid $color-primary-300;
+      @include fromTablet() {
+        background-color: $color-white;
+        border-color: $color-white;
+        outline: var(--outline-width) solid $color-primary-300;
+      }
     }
 
     &:active {
