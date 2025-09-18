@@ -47,7 +47,7 @@ export const Home: React.FC = () => {
       <div className="buttons" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '0.25rem 1rem',
+        gap: '0.25rem',
         padding: '1rem 0',
       }}>
         {
