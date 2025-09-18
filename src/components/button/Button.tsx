@@ -30,6 +30,13 @@ export const Button: React.FC<ButtonProps> = ({
   size = 'medium',
   onClick = () => {},
 }) => {
+  const spinnerConfig = {
+    tiny: 'tiny',
+    small: 'tiny',
+    medium: 'small',
+    large: 'medium',
+    giant: 'large',
+  }
 
   const buttonClassName = classNames(
     'button',
@@ -79,6 +86,10 @@ export const Button: React.FC<ButtonProps> = ({
     return 'blue'
   }
 
+  const sppinerSize = (): SizeType => {
+    return spinnerConfig[size] as SizeType
+  }
+
   return (
     <button
       id={`button-${prefix}`}
@@ -113,7 +124,7 @@ export const Button: React.FC<ButtonProps> = ({
       }
       <Spinner
         color={spinnerColor()}
-        size='small'
+        size={sppinerSize()}
         isLoading={loading}
       />
     </button>
