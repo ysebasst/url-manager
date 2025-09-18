@@ -1,0 +1,206 @@
+@use "@/styles" as *;
+
+.button {
+  --padding-y: 0.75rem;
+  --padding-x: 0.5rem;
+  --min-size: 1.5rem;
+  --icon-size: 1rem;
+  --border-width: 0.09375rem;
+  --outline-width: 0.1875rem;
+
+  position: relative;
+  display: grid;
+  grid-template-areas: "text";
+  align-items: center;
+  gap: 0.5rem;
+  padding:
+    calc(var(--padding-y) - var(--border-width))
+    calc(var(--padding-x) - var(--border-width));
+  min-height: var(--min-size);
+  width: 100%;
+  min-width: var(--min-size);
+  max-width: 100%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: var(--border-width) solid $color-primary-500;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &--size-tiny {
+    --padding-x: 0.5rem;
+    --min-size: 1.5rem;
+    font-size: 0.75rem;
+    border-radius: $border-radius-sm;
+  }
+
+  &--size-small {
+    --padding-x: 0.75rem;
+    --min-size: 2rem;
+    font-size: 0.875rem;
+    border-radius: $border-radius-sm;
+  }
+
+  &--size-medium {
+    --padding-x: 1rem;
+    --min-size: 2.5rem;
+    font-size: 0.875rem;
+    border-radius: $border-radius-md;
+  }
+
+  &--size-large {
+    --padding-x: 1rem;
+    --min-size: 3rem;
+    font-size: 1rem;
+    border-radius: $border-radius-md;
+  }
+
+  &--size-giant {
+    --padding-x: 1.5rem;
+    --min-size: 5rem;
+    font-size: 2.5rem;
+    border-radius: $border-radius-lg;
+  }
+
+  &--type-primary {
+    color: $color-white;
+    background-color: $color-primary-500;
+    border-color: $color-primary-500;
+
+    &:hover {
+      background-color: $color-secondary-500;
+      border-color: $color-secondary-500;
+    }
+
+    &:focus {
+      outline: var(--outline-width) solid $color-primary-100;
+    }
+
+    &:active {
+      background-color: $color-secondary-700;
+      border-color: $color-secondary-700;
+    }
+
+    &:disabled {
+      background-color: $color-grey-50;
+      border-color: $color-grey-50;
+      cursor: not-allowed;
+    }
+  }
+
+  &--type-outline {
+    color: $color-primary-500;
+    background-color: transparent;
+    border-color: $color-primary-500;
+
+    &:hover {
+      background-color: $color-primary-50;
+    }
+
+    &:focus {
+      background-color: $color-white;
+      outline: var(--outline-width) solid $color-primary-100;
+    }
+
+    &:active {
+      background-color: $color-primary-100;
+    }
+
+    &:disabled {
+      color: $color-grey-200;
+      border-color: $color-grey-200;
+      cursor: not-allowed;
+    }
+  }
+
+  &--type-clear {
+    color: $color-primary-500;
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover {
+      background-color: $color-primary-50;
+      border-color: $color-primary-50;
+    }
+
+    &:focus {
+      background-color: $color-white;
+      border-color: $color-white;
+      outline: var(--outline-width) solid $color-primary-300;
+    }
+
+    &:active {
+      background-color: $color-primary-100;
+      border-color: $color-primary-100;
+    }
+
+    &:disabled {
+      color: $color-grey-200;
+      cursor: not-allowed;
+    }
+  }
+
+  &--loading {
+    grid-template-columns: unset;
+    grid-template-areas: unset;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  &--icon-only {
+    grid-template-columns: unset;
+    grid-template-areas: unset;
+    padding: 0;
+    max-width: var(--min-size);
+  }
+
+  &--has-icon {
+    grid-template-columns: var(--icon-size) 1fr var(--icon-size);
+    grid-template-areas: "icon-left text icon-right";
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--left {
+      grid-area: icon-left;
+    }
+
+    &--right {
+      grid-area: icon-right;
+    }
+
+    &--tiny {
+      --icon-size: 1rem;
+      font-size: 1rem;
+    }
+
+    &--small {
+      --icon-size: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    &--medium {
+      --icon-size: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    &--large {
+      --icon-size: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    &--giant {
+      --icon-size: 3rem;
+      font-size: 3rem;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+    text-align: center;
+  }
+}

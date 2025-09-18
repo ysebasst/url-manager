@@ -1,0 +1,21 @@
+@use '@/styles' as *;
+
+.overlay {
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  
+  &--blue {
+    background-color: rgb($color-white, 0.75);
+  }
+
+  &--white {
+    background-color: rgb($color-black, 0.75);
+  }
+}

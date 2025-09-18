@@ -1,0 +1,41 @@
+@use "@/styles" as *;
+
+.spinner {
+
+  &--blue {
+    color: $color-primary-500;
+  }
+
+  &--white {
+    color: $color-white;
+  }
+
+  &__icon {
+    animation: spin 900ms linear infinite;
+
+    &--tiny {
+      font-size: 1rem;
+    }
+
+    &--small {
+      font-size: 1.5rem;
+    }
+
+    &--medium {
+      font-size: 2rem;
+    }
+
+    &--large {
+      font-size: 3rem;
+    }
+
+    &--giant {
+      font-size: 5rem;
+    }
+  }
+
+  @keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+}
