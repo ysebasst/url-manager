@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '0.25rem 1rem',
-        padding: '1rem',
+        padding: '1rem 0',
       }}>
         {
           buttonList.map((button) => (
