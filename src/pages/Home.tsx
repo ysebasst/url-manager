@@ -78,7 +78,7 @@ export const Home: React.FC = () => {
       </select>
       <div className='buttons' style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(20rem, 1fr))',
         gap: '0.25rem',
         padding: '1rem 0',
       }}>
