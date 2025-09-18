@@ -69,8 +69,10 @@
     border-color: $color-primary-500;
 
     &:hover {
-      background-color: $color-secondary-500;
-      border-color: $color-secondary-500;
+      @include fromTablet() {
+        background-color: $color-secondary-500;
+        border-color: $color-secondary-500;
+      }
     }
 
     &:focus {
@@ -95,7 +97,9 @@
     border-color: $color-primary-500;
 
     &:hover {
-      background-color: $color-primary-50;
+      @include fromTablet() {
+        background-color: $color-primary-50;
+      }
     }
 
     &:focus {
@@ -120,8 +124,10 @@
     border-color: transparent;
 
     &:hover {
-      background-color: $color-primary-50;
-      border-color: $color-primary-50;
+      @include fromTablet() {
+        background-color: $color-primary-50;
+        border-color: $color-primary-50;
+      }
     }
 
     &:focus {
